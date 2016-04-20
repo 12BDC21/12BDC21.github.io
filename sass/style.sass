@@ -1,0 +1,793 @@
+$main-color: #fa8500
+$bg-color: #31302f
+$text-color: #fff
+
+@import url(https://fonts.googleapis.com/css?family=Lato)
+
+
+
+body
+	padding: 0
+	margin: 0
+	background: $bg-color
+	font-size: 16px
+	font-family: Lato, sans-serif
+	overflow-x: hidden
+ul, li
+	list-style-type: none
+	padding: 0
+	margin: 0
+a, a:hover, a:focus, a:active
+	text-decoration: none
+*
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+input
+	&[placeholder], &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder
+		text-overflow: ellipsis
+\:focus
+	&::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder
+		color: transparent
+
+// header start
+
+.main-head
+	background: $main-color
+	padding: 35px 0 28px 0
+	box-shadow: 0 2px 0 2px $main-color
+.logo
+	font: 900 1.7em/26px Lato, sans-serif
+	color:  $text-color
+	float: left
+	&:hover,
+	&:active,
+	&:focus
+		color: $text-color
+		text-decoration: none
+
+.top-nav
+	float: right
+	li
+		display: inline-block
+		padding: 0 20px
+		&:last-child
+			padding-right: 0
+	a
+		font: 700 1em/26px Lato, sans-serif
+		color:  $text-color
+		text-transform: uppercase
+		padding: 3px
+	a:hover
+		border-bottom: 1px solid $text-color
+// MENU GAMBURGER START
+.toggle-mnu
+	display: none
+	height: 25px
+	width: 25px
+	right: 4%
+	top: 45px
+	span
+		&:after, &:before
+			content: ""
+			position: absolute
+			left: 0
+			top: -9px
+		&:after
+			top: 9px
+			width: 100%
+			height: 2px
+			background-color: $text-color
+			transition: all 0.3s
+			backface-visibility: hidden
+			border-radius: 2px
+		position: relative
+		display: block
+		width: 100%
+		height: 2px
+		background-color: $text-color
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+		&:before
+			width: 100%
+			height: 2px
+			background-color: $text-color
+			transition: all 0.3s
+			backface-visibility: hidden
+			border-radius: 2px
+	&.on
+		span
+			background-color: transparent
+			&:before
+				transform: rotate(45deg) translate(5px, 5px)
+			&:after
+				transform: rotate(-45deg) translate(7px, -8px)
+		+ #menu
+			opacity: 1
+			visibility: visible
+// MENU GAMBURGER END
+
+
+// header end
+
+
+// section slider start
+.sec-slid
+	background: $main-color
+	padding: 40px 0 5px
+	position: relative
+	.title
+		color: $text-color
+		font: 900 2.5em/1 Lato, sans-serif
+		text-transform: uppercase
+		margin: 10px 0 40px
+	.slid-item
+		text-align: center
+		.works-bg
+			width: 80%
+			text-align: center
+			display: inline-block
+	.owl-nav
+		position: absolute
+		top: 50%
+		width: 100%
+		>div
+			height: 50px
+			width: 27px
+			background-image: url(../img/arrow_naw.png)
+			background-size: cover
+			position: absolute
+			opacity: .4
+			&:hover
+				opacity: 1
+		.owl-next
+			right: 0
+			left: auto
+			background-position: 27px 0
+.sec-slid:after
+	content: ''
+	width: 0
+	height: 0
+	border-left: 50vw solid transparent
+	border-right: 50vw solid $main-color
+	border-bottom: 80px solid transparent
+	border-top: 80px solid $main-color
+	position: absolute
+	bottom: -160px
+	left: 0
+
+// section slider end
+
+
+
+// SECTION things START
+
+.sect-things
+	color: $text-color
+	text-align: center
+	font: 400 16px/24px Lato, sans-serif
+	color:  #dedede
+	padding: 150px 0
+	background-size: cover
+	.item-wrap
+		margin-top: 30px
+		display: block
+		padding-bottom: 20px
+		.img-wrap
+			background: $main-color
+			border-radius: 50%
+			padding: 30px
+			display: inline-block
+			overflow: hidden
+			img
+				width: 60px
+				height: auto
+		h4
+			font: 700 21px/24px Lato, sans-serif
+			color: $main-color
+			margin: 10px 0
+		p
+			font: 400 16px/24px Lato, sans-serif
+			color:  #dedede
+h2
+	font: 700 36px/36px Lato, sans-serif
+	color: $main-color
+	text-transform: uppercase
+	margin-bottom: 20px
+	padding: 5px
+	text-align: center
+h2:after
+	content: ''
+	width: 136px
+	height: 2px
+	margin: 0 auto
+	display: block
+	margin-top: 20px
+	background: $main-color
+
+// SECTION things END
+
+
+
+// SECTION portfolio start
+.sect-portfolio
+	background: $main-color
+	padding: 120px 0
+	text-align: center
+	color: $text-color
+
+	h2
+		color: $text-color
+	h2:after
+		background: $text-color
+	ul
+		margin: 20px 0
+	li
+		display: inline-block
+		padding: 0 20px
+		text-transform: uppercase
+		font-size: 18px
+		font-weight: 700
+		cursor: pointer
+		color: #f9d2ce
+		border-right: 1px solid #f9d2ce
+		&:last-child
+			border-right: none
+		&.active
+			color: $text-color
+	.mix
+		display: none
+
+.portfolio-item
+	-webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%)
+	clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%)
+	overflow: hidden
+	padding: 0
+	transform: scale(.9)
+	font-family: Arial
+	cursor: pointer
+	transition: all .3s ease-out
+	img
+		width: 100%
+	.wrap-cont
+		position: absolute
+		opacity: 0
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+		background:  rgba(0, 0, 0, 0.8) linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%)
+	.wrap-text
+		max-width: 170px
+		max-height: 170px
+		font-size: 14px
+		font-weight: 400
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+		h4
+			font-size: 16px
+			font-weight: 700
+			text-transform: uppercase
+		a
+			display: inline-block
+			background-color: transparent
+			border: 1px solid $main-color
+			padding: 2px 15px
+			color: $main-color
+			text-transform: uppercase
+			letter-spacing: 2px
+			font-weight: bold
+.portfolio-item:hover
+	transform: scale(1)
+	.wrap-cont
+		opacity: 1
+
+// POPUP WINDOWS
+.wrap-popup
+	color: $main-color
+	margin: auto
+	text-align: center
+	max-width: 500px
+	background-color: #fff
+	overflow: hidden
+	position: relative
+	.wrap-text
+		padding: 10px 20px
+	h4
+		text-transform: uppercase
+		font-size: 20px
+		margin: 5px 0
+	img
+		width: 100%
+// button close popup start
+.mfp-close-btn-in
+	.mfp-close
+		position: absolute
+		color: $main-color
+// button close popup end
+
+// SECTION portfolio end
+
+
+
+// sect-about start
+
+
+.sect-about
+	position: relative
+	padding: 40px 0
+	color:  #dedede
+	.wrap-item
+		line-height: 24px
+		text-align: center
+		margin: 60px 0 60px
+		h4, h5
+			text-transform: uppercase
+			color: $main-color
+		h4
+			font-weight: 700
+			font-size: 21px
+			margin-bottom: 0
+		h5
+			font-size: 14px
+			margin-top: 0
+			font-weight: 300
+		.social-wrap
+			li
+				display: inline-block
+				margin: 5px
+				vertical-align: middle
+			a
+				font-size: 21px
+				font-weight: 400
+				line-height: 24px
+				opacity: .7
+				.fa-twitter
+					color: #00c0d6
+				.fa-pinterest-p
+					color: #e74c3c
+				.fa-google-plus
+					color: #d51400
+				.fa-vk
+					color: #597DA3
+			a:hover
+				opacity: 1
+
+
+	.wrap-img
+		display: inline-block
+		border-radius: 50%
+		background: $main-color
+		overflow: hidden
+		width: 290px
+		height: 290px
+		position: relative
+		font-size: 18px
+		font-weight: 700
+		span
+			line-height: 24px
+			color: $text-color
+		img
+			width: 100%
+			transform: scale(.7)
+		.wrap-text
+			position: absolute
+			padding-top: 40%
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			opacity: 0
+			background-color: rgba(0, 0, 0, 0.7)
+			border-radius: 50%
+			transition: all .6s ease
+
+	.wrap-img:hover
+		.wrap-text
+			opacity: 1
+
+.sect-about:before
+	content: ''
+	background: url(../img/bg_romb.png) repeat-x
+	position: absolute
+	height: 65px
+	top: -32.5px
+	width: 100%
+
+
+// sect-about end
+
+
+
+
+
+// Section - Testimonials START
+.sect-testimonials
+	position: relative
+	background: $main-color
+	padding: 120px 0
+	color: $text-color
+	h2
+		color: $text-color
+	h2:after
+		background: $text-color
+	.wrap-item
+		margin-top: 50px
+		max-width: 1030px
+		margin: 0 auto
+	.wrap-img
+		// border-radius: 50% при подключении слайдера изображение выходит за рамки, не знаю как решить
+		background-color:  #cb3f31
+		width: 153px
+		height: 155px
+		overflow: hidden
+		margin-top: 30px
+		float: right
+		img
+			width: 100%
+			height: auto
+			transform: scale(.8)
+			padding-top: 20px
+	.wrap-text
+		padding: 5px
+		p
+			font-size: 18px
+			line-height: 36px
+		.little-p
+			text-transform: uppercase
+			font-size: 12px
+			font-weight: 400
+			line-height: 24px
+			font-style: normal
+
+	.owl-dots
+		width: 100%
+		text-align: center
+		.owl-dot
+			display: inline-block
+			border-radius: 50%
+			background-color: rgba(255, 255, 255, 0.6)
+			width: 14px
+			height: 14px
+			margin: 5px
+		.owl-dot.active
+			background-color: #fff
+
+
+
+.sect-testimonials:before
+	content: ''
+	position: absolute
+	background: url(../img/bg_circle.png) repeat-x
+	height: 82px
+	top: -41px
+	width: 100%
+.sect-testimonials:after
+	content: ''
+	position: absolute
+	background: url(../img/bg_3circle.png) repeat-x
+	height: 125px
+	bottom: -62.5px
+	width: 100%
+	
+// Section - Testimonials END
+
+
+
+// section-testimonials start
+.sec-posts
+	padding: 80px 0 160px
+	.item-wrap
+		
+		background: $main-color
+		color: $text-color
+		text-align: center
+		max-width: 550px
+		margin: 40px auto 5px
+
+
+		img
+			width: 100%
+		.not-img
+			background-color: rgba(0, 0, 0, 0.09)
+			height: 60px
+		.wrap-text
+			padding: 10px
+		h4
+			text-transform: uppercase
+			margin: 50px 0 0
+			font-size: 21px
+			font-weight: 700
+			line-height: 24px
+		span
+			font-size: 12px
+			line-height: 24px
+		p
+			line-height: 24px
+			font-size: 16px
+		.wrap-text:after
+			content: ''
+			width: 131px
+			height: 1px
+			display: inline-block
+			text-align: center
+			background: $text-color
+		.wrap-icon
+			padding: 15px 5px
+			a
+				color:  #fde3e1
+				font-size: 14px
+				font-weight: 400
+				line-height: 24px
+				i
+					padding: 0 5px
+	.wrap-content
+		position: relative
+		.date
+			position: absolute
+			top: -30px
+			background-color:  #ffffff
+			width: 60px
+			height: 60px
+			margin: 0 auto
+			left: 0
+			right: 0
+			color: #e74c3c
+			font-size: 16px
+			line-height: 60px
+			text-transform: uppercase
+			-webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%)
+			clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%)
+			overflow: hidden
+
+// section-testimonials end
+
+
+
+
+// SECTION-TEXT START
+.sec-text
+	padding: 80px 0
+	background: $main-color
+	position: relative
+.sec-text:after
+	content: ''
+	position: absolute
+	background: $main-color
+	width: 100%
+	height: 50px
+	top: -50px
+	z-index: -1
+	border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%
+.sec-text:before
+	content: ''
+	position: absolute
+	background: $main-color
+	width: 100%
+	height: 50px
+	bottom: -50px
+	border-radius: 0px 0px 50% 50% / 0px 0px 100% 100%
+	z-index: -1
+
+
+// SECTION-TEXT END
+
+
+// SECTION TEXT START
+
+.sec-text
+	padding: 100px 0
+	background: $main-color
+	color: $text-color
+	h2
+		color: $text-color
+		text-align: left
+		margin: 5px 0
+	h2:after
+		display: none
+	p
+		font-size: 16px
+		line-height: 24px
+	.wrap-img
+		text-align: center
+		margin: 50px 0
+	img
+		width: 70%
+
+
+
+// SECTION TEXT END
+
+
+
+// Section - Features START
+.sec-features
+	padding: 180px 0
+	color: #dedede
+	.wrap-item
+		margin-top: 50px
+		text-align: center
+	.decor-img
+		width: 100px
+		height: 100px
+		background-color: #fff
+		border-radius: 50%
+		border: 1px solid #dedede
+		display: inline-block
+	h4
+		color: $main-color
+		font-size: 20px
+		line-height: 36px
+		margin: 5px 0
+	p
+		line-height: 24px
+
+// Section - Features END
+
+
+// SECTION CONTACTS START
+.sec-contacts
+	background: $main-color
+	padding: 60px 0
+	position: relative
+	h2
+		color: $text-color
+	h2:after
+		background: $text-color
+
+	textarea, input 
+		padding: 10px
+		font-family: FontAwesome, sans-serif
+		outline: none
+		border: 1px solid transparent
+		transition: all .5s
+		box-shadow: 0 5px 0 0 transparent
+		color: $main-color
+		margin-bottom: 30px
+	::-webkit-input-placeholder
+		color: #e74c3c
+		font-size: 18px
+	::-moz-placeholder
+		color: #e74c3c
+		font-size: 18px
+	:-moz-placeholder
+		color: #e74c3c
+		font-size: 18px
+	:-ms-input-placeholder
+		color: #e74c3c
+		font-size: 18px
+		
+	input
+		width: 47%
+		margin-right: 5%
+		min-width: 210px
+	.last-input
+		margin-right: 0	
+	input:active,
+	input:hover,
+	input:focus,
+	textarea:active,
+	textarea:hover,
+	textarea:focus
+		outline: none
+		box-shadow: 0 5px 0 0 #bf2110
+	textarea
+		width: 100%
+		resize: none
+		height: 250px
+	button
+		background: #73bfc1
+		outline: none
+		text-transform: uppercase
+		color: $text-color
+		line-height: 36px
+		margin: 5px auto
+		display: block
+		position: relative
+		border: none
+		padding-right: 35px
+		padding-left: 20px
+		transition: all .4s
+		margin-bottom: 10px
+		.fa
+			margin-left: 20px
+			position: absolute
+			background: #a1d4d5
+			right: -20px
+			top: -0.5px
+			height: 38.5px
+			width: 50px
+			line-height: 39px
+			-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)
+			clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)
+	button:active,
+	button:focus,
+	button:hover
+		background: #a1d4d5
+		.fa
+			background: #73bfc1
+	.map
+		text-align: center
+		margin-top: 80px
+	form
+		margin-top: 80px
+
+		
+
+
+
+.sec-contacts:before
+	content: ''
+	position: absolute
+	background: #31302f
+	height: 80px
+	top: -40px
+	width: 80px
+	transform: rotate(45deg)
+	left: 0
+	right: 0
+	margin: 0 auto
+.sec-contacts:after
+	content: ''
+	bottom: -50px
+	position: absolute
+	border-left: 50vw solid transparent
+	border-right: 50vw solid transparent
+	border-bottom: 0
+	border-top: 50px solid $main-color
+
+
+// SECTION CONTACTS END
+
+
+// MAIN-FOOTER START
+.main-footer
+	padding: 70px 0 30px
+	text-align: center
+	.social-wrap
+		margin-top: 50px
+		li
+			display: inline-block
+			text-align: center
+			margin: 10px
+		a
+			display: block
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			background: #3b5998
+			color: $text-color
+		li:nth-child(2)
+			a
+				background: #00aced
+		li:last-child
+			a
+				background: #dd4b39
+		.fa
+			line-height: 50px
+	.social-wrap:after
+		content: ''
+		width: 136px
+		height: 2px
+		margin: 0 auto
+		display: block
+		margin-top: 20px
+		background: #e74c3c
+	h3
+		text-transform: uppercase
+		color: #bfbfbf
+		line-height: 36px
+		font-weight: 400
+		b
+			font-weight: 700
+
+
+
+// MAIN-FOOTER END
+
